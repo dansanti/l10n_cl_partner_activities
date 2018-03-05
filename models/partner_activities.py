@@ -24,19 +24,20 @@ class partner_activities(models.Model):
         (('1', '1'), ('2', '2'), ('ND', 'ND')), 'TAX Category', required=True,
         translate=True, default='1')
 
-    internet_available = fields.Boolean('Available at Internet')
+    internet_available = fields.Boolean(
+            string='Available at Internet',
+            default=True,
+        )
 
     active = fields.Boolean(
-        'Active', help="Allows you to hide the activity without removing it.")
+            string='Active',
+            help="Allows you to hide the activity without removing it.",
+            default=True,
+        )
 
     partner_ids = fields.Many2many(
         'res.partner', id1='activities_id', id2='partner_id',
         string='Partners')
-
-    _defaults = {
-        'active': 1,
-        'internet_available': 1
-    }
 
 
 class partner_turns(models.Model):
