@@ -42,6 +42,6 @@
         'views/sii_activity_description.xml',
         'security/ir.model.access.csv',
     ],
-    'version': '0.2',
+    'version': '0.2.1',
     'website': 'http://blancomartin.cl'
 }
